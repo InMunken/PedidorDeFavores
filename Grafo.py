@@ -13,7 +13,6 @@ class Grafo:
 
         self.nodos.append(nodo)
 
-        pass
     
     def addArista(self, nodoI, nodoF, peso):
 
