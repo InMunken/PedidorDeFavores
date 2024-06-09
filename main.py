@@ -1,7 +1,7 @@
 import Arista
 import Grafo
 
-
+#prueba
 arista1 = Arista.Arista("A","B", 5)
 
 grafo = Grafo.Grafo()
