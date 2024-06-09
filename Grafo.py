@@ -13,16 +13,13 @@ class Grafo:
 
         self.nodos.append(nodo)
 
-        pass
-    
-    def addArista(self, nodoI, nodoF, peso):
+    def addArista(self, *args):
 
-        self.Arista.append(Arista.Arista(nodoI,nodoF,peso))
+        if (len(args)==1):
+            self.Arista.append(args[0])
+        else:
 
-        pass
-    def addArista(self, arista):
-
-        self.Arista.append(arista)
+            self.Arista.append(Arista.Arista(args[0],args[1],args[2]))
 
         pass
 
@@ -38,3 +35,15 @@ class Grafo:
 
         
 
+'''
+    def addArista(self, nodoI, nodoF, peso):
+
+        self.Arista.append(Arista.Arista(nodoI,nodoF,peso))
+
+        pass
+    def addArista(self, arista):
+
+        self.Arista.append(arista)
+
+        pass 
+'''
