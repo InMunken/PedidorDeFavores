@@ -51,12 +51,12 @@ def distancia_minima(grafo, inicio, fin):
 # Crear el grafo y agregar relaciones
 grafo = {}
 agregar_relacion(grafo, "Juan", "Pedro", "amigo personal")
-agregar_relacion(grafo, "Pedro", "María", "conocido")
+agregar_relacion(grafo, "Pedro", "María", "compañero")
 agregar_relacion(grafo, "Juan", "María", "compañero")
-# Puedes agregar más relaciones según tus necesidades
+
 
 # Probar la distancia mínima entre dos personas
 inicio = "Juan"
-fin = "María"
+fin = "Pedro"
 distancia_amistad = distancia_minima(grafo, inicio, fin)
 print(f"La mínima distancia de amistad entre {inicio} y {fin} es: {distancia_amistad}")
