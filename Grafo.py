@@ -1,3 +1,4 @@
+import sys
 import Arista
 
 
@@ -53,32 +54,83 @@ class Grafo: #instancia de la clase grafo
 
                 aristaTotales.append(arista.devolverOtro(nodo))
 
-        pass
+        return aristaTotales
 
     class Dijkstra:
 
-        
+        def __init__(self,grafo,nodoInicial,nodoFinal):
+            
+            self.grafo = grafo
+            self.nodoInicial = nodoInicial
+            self.nodoFinal = nodoFinal
 
+            nodoActual = nodoInicial
+
+            self.nodosVisitados = []
+            self.nodosVisitados.append(nodoActual)
+
+            self.DistanciasAux = {
+                nodoActual:0
+            }
+
+            self.DistanciasVisitados = {
+                nodoActual:0
+            }
+
+            aristas = self.grafo.getAristasDeNodo(nodoActual)
+
+            for arista in aristas:
+
+                self.DistanciasAux[arista.getNodoF()] = arista.getPeso()
+
+            self.recorre(nodoActual)
+
+
+
+        def nodoMenor(self):
+
+            valores_ordenados = sorted(self.DistanciasAux)
+
+            for clave, valor in valores_ordenados.items():
+                if (valor not in self.nodosVisitados):
+                    return clave
+
+
+
+        def recorre(self, nodoActual):
+
+            distanciaActual = self.getAristaLiviana(nodoActual).getPeso()
+            #self.nodoActual= self.getAristaLiviana(nodoActual).getNodoF()
+            self.nodoActual= self.nodoMenor()
+
+            if (self.nodoActual == self.nodoFinal):
+                pass
+
+            aristas = self.grafo.getAristasDeNodo(nodoActual)
+
+            for arista in aristas:
+
+                if arista.getNodoF() in self.nodosVisitados:
+
+                    if (self.DistanciasAux[arista.getNodoF()] <distanciaActual + arista.getPeso()):
+
+                        self.DistanciasAux[arista.getNodoF()] = distanciaActual + arista.getPeso()
+            
+            self.nodosVisitados.append(nodoActual)
+            
+            
+        
         def getAristaLiviana(self,nodo):
 
-            aristaMin = self.grafo.getAristasDeNodo(nodo)
+            aristaMin = sys.maxsize
 
             for arista in self.grafo.getAristasDeNodo(nodo):
 
-                arista.getPeso(self)
+                if (arista.getPeso()<aristaMin and arista.getNodoF() not in self.nodosVisitados):
 
+                    aristaMin=arista.getPeso()
+            
+            return aristaMin
 
-                pass
-
-'''
-    def addArista(self, nodoI, nodoF, peso):
-
-        self.Arista.append(Arista.Arista(nodoI,nodoF,peso))
-
-        pass
-    def addArista(self, arista):
-
-        self.Arista.append(arista)
-
-        pass 
-'''
+        
+    

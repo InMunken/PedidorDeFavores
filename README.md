@@ -24,7 +24,7 @@ El archivo de entrada se compondrá de las siguientes partes
 
 Ejemplo: 
 ```
-4 5
+4   
 Pitusas
 Ñandú
 InMunken
