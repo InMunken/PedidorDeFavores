@@ -52,7 +52,7 @@ class Grafo: #instancia de la clase grafo
 
             if(arista.tieneNodo(nodo)):
 
-                aristaTotales.append(arista.devolverOtro(nodo))
+                aristaTotales.append(arista)
 
         return aristaTotales
 
@@ -60,67 +60,54 @@ class Grafo: #instancia de la clase grafo
 
         def __init__(self,grafo,nodoInicial,nodoFinal):
             
+            #inicializacion de variables
+
             self.grafo = grafo
             self.nodoInicial = nodoInicial
             self.nodoFinal = nodoFinal
-
-            nodoActual = nodoInicial
-
+            self.nodoActual = nodoInicial
             self.nodosVisitados = []
-            self.nodosVisitados.append(nodoActual)
+            self.nodosVisitados.append(self.nodoActual)
 
             #mapa de distancias
             self.DistanciasAux = {
-                nodoActual:0
+                self.nodoActual:0
             }
 
-            self.DistanciasVisitados = {
-                nodoActual:0
-            }
+            aristas = self.grafo.getAristasDeNodo(self.nodoActual)
 
-            nodosVecinos = self.grafo.getAristasDeNodo(nodoActual)
-
-            print(aristas)
-
-            for nodo in nodosVecinos:
+            for arista in aristas:
 
                 self.DistanciasAux[arista.getNodoF()] = arista.getPeso()
 
-            print("ante del if final")
-
-            if(self.recorre(nodoActual)):
+            if(self.recorre()):
                 print(self.DistanciasAux)
 
             
 
-
-
+        #Devuelve el nodo de menor distancia que no se haya visitado
         def nodoMenor(self):
 
-            valores_ordenados = sorted(self.DistanciasAux)
+            valores_ordenados = dict(sorted(self.DistanciasAux.items(), key=lambda item: item[1]))
 
             for clave, valor in valores_ordenados.items():
-                if (valor not in self.nodosVisitados):
+                if (clave not in self.nodosVisitados):
                     return clave
 
 
+        # recorre la arista mas liviana y reemplaza el nodo si la distancia es mas corta
+        def recorre(self):
 
-        def recorre(self, nodoActual):
+            distanciaActual = self.DistanciasAux[self.nodoActual]
 
-            #distanciaActual = self.getAristaLiviana(nodoActual).getPeso() + self.DistanciasAux[nodoActual]
-            distanciaActual = self.DistanciasAux[nodoActual]
-            #self.nodoActual= self.getAristaLiviana(nodoActual).getNodoF()
-            self.nodoActual= self.nodoMenor()
+            self.nodoActual = self.nodoMenor()
 
             if (self.nodoActual == self.nodoFinal):
 
                 return True
 
-                
 
-            aristas = self.grafo.getAristasDeNodo(nodoActual)
-
-            print(aristas)
+            aristas = self.grafo.getAristasDeNodo(self.nodoActual)
 
             for arista in aristas:
 
@@ -130,9 +117,9 @@ class Grafo: #instancia de la clase grafo
 
                         self.DistanciasAux[arista.getNodoF()] = distanciaActual + arista.getPeso()
             
-            self.nodosVisitados.append(nodoActual)
+            self.nodosVisitados.append(self.nodoActual)
 
-            return self.recorre(nodoActual)
+            return self.recorre(self.nodoActual)
             
             
         

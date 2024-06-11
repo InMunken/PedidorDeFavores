@@ -10,7 +10,7 @@ La estructura del proyecto esta definida en `clases.drawio`
 2. Se ejecutará el archivo `main.py`.
 3. Se ingresarán _por consola?_ dos nombres de nodos.
 
-Entonces el programa revolverá cuál es el camino más óptimo para pedir un favor a travez de tus conocidos y los conovidos de sus conocidos.
+Entonces el programa revolverá cuál es el camino más óptimo para pedir un favor a través de tus conocidos y los conocidos de sus conocidos.
 
 
 ## Estrucutura del archivo de entrada: 
