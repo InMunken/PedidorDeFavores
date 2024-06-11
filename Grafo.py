@@ -2,7 +2,7 @@ import sys
 import Arista
 
 
-class Grafo: #instancia de la clase grafo
+class Grafo: # Defincion de la clase grafo
 
 
     # Constructor
@@ -19,7 +19,7 @@ class Grafo: #instancia de la clase grafo
 
     # Metodos añade arista
     def addArista(self, *args):
-
+        
         # Si solo hay un argumento añade una arista
         if (len(args)==1):
             self.Arista.append(args[0])
