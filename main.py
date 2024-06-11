@@ -4,7 +4,7 @@ import Lectura
 
 ### Se leen los datos del archivo de entrada
 
-lector = Lectura.Lector("entrada2.in") 
+lector = Lectura.Lector("Entrada/entrada2.in") 
 
 nodos = lector.get_nodes()
 aristas = lector.get_edges()
