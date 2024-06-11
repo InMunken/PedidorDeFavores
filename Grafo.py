@@ -69,6 +69,7 @@ class Grafo: #instancia de la clase grafo
             self.nodosVisitados = []
             self.nodosVisitados.append(nodoActual)
 
+            #mapa de distancias
             self.DistanciasAux = {
                 nodoActual:0
             }
@@ -77,13 +78,20 @@ class Grafo: #instancia de la clase grafo
                 nodoActual:0
             }
 
-            aristas = self.grafo.getAristasDeNodo(nodoActual)
+            nodosVecinos = self.grafo.getAristasDeNodo(nodoActual)
 
-            for arista in aristas:
+            print(aristas)
+
+            for nodo in nodosVecinos:
 
                 self.DistanciasAux[arista.getNodoF()] = arista.getPeso()
 
-            self.recorre(nodoActual)
+            print("ante del if final")
+
+            if(self.recorre(nodoActual)):
+                print(self.DistanciasAux)
+
+            
 
 
 
@@ -99,24 +107,32 @@ class Grafo: #instancia de la clase grafo
 
         def recorre(self, nodoActual):
 
-            distanciaActual = self.getAristaLiviana(nodoActual).getPeso()
+            #distanciaActual = self.getAristaLiviana(nodoActual).getPeso() + self.DistanciasAux[nodoActual]
+            distanciaActual = self.DistanciasAux[nodoActual]
             #self.nodoActual= self.getAristaLiviana(nodoActual).getNodoF()
             self.nodoActual= self.nodoMenor()
 
             if (self.nodoActual == self.nodoFinal):
-                pass
+
+                return True
+
+                
 
             aristas = self.grafo.getAristasDeNodo(nodoActual)
 
+            print(aristas)
+
             for arista in aristas:
 
-                if arista.getNodoF() in self.nodosVisitados:
+                if arista.getNodoF() not in self.nodosVisitados:
 
-                    if (self.DistanciasAux[arista.getNodoF()] <distanciaActual + arista.getPeso()):
+                    if (self.DistanciasAux[arista.getNodoF()] < distanciaActual + arista.getPeso()):
 
                         self.DistanciasAux[arista.getNodoF()] = distanciaActual + arista.getPeso()
             
             self.nodosVisitados.append(nodoActual)
+
+            return self.recorre(nodoActual)
             
             
         

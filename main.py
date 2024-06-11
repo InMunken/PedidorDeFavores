@@ -2,32 +2,30 @@ import Arista
 import Grafo
 import Lectura
 
-#prueba más importante que la de Ñandú:
+### Se leen los datos del archivo de entrada
 
-lector = Lectura.Lector("eventualmente esto servirá para algo")
+lector = Lectura.Lector("entrada.in")
 
-# print(lector.get_cantidadNodos())
-# print(lector.get_cantidadAristas())
-# print(lector.get_nodes())
-# print(lector.get_edges())
+nodos = lector.get_nodes()
+aristas = lector.get_edges()
 
 
-#prueba
-arista1 = Arista.Arista("A","B", 5)
-
+### Se crea el grafo
 grafo = Grafo.Grafo()
 
-for i in range(lector.get_cantidadNodos()):
-    
+
+### Se añaden los nodos y las aristas al grafo
+for nodo in nodos:
+    grafo.addNodo(nodo)
+    #print("añandido el nodo", nodo)
+
+for arista in aristas:
+    grafo.addArista(arista[0], arista[1], int(arista[2]))
+    #print("añadida la arista", arista)
+    # print(arista[0])
+    # print(arista[1])
+    # print(arista[2])
 
 
 
-
-grafo.addArista(arista1)
-grafo.addArista("A","c", 3)
-grafo.addArista("c","B", 1)
-
-for nodo in grafo.getRelacionados("A"):
-    print(nodo)
-
-
+Grafo.Grafo.Dijkstra(grafo,"Pitusas","Pola")
