@@ -66,13 +66,18 @@ class Grafo: #instancia de la clase grafo
             self.nodoInicial = nodoInicial
             self.nodoFinal = nodoFinal
             self.nodoActual = nodoInicial
+            self.distanciaActual = 0
             self.nodosVisitados = []
             self.nodosVisitados.append(self.nodoActual)
 
             #mapa de distancias
-            self.DistanciasAux = {
-                self.nodoActual:0
-            }
+            self.DistanciasAux = {}
+            for nodo in grafo.nodos:
+                self.DistanciasAux[nodo] = sys.maxsize
+                pass
+
+            self.DistanciasAux[self.nodoActual] = 0
+            
 
             aristas = self.grafo.getAristasDeNodo(self.nodoActual)
 
@@ -82,6 +87,9 @@ class Grafo: #instancia de la clase grafo
 
             if(self.recorre()):
                 print(self.DistanciasAux)
+                print("Entre ", nodoInicial , " y " , nodoFinal , " hay una distancia de amistad de: " , self.distanciaActual)
+
+            #return self.DistanciasAux[self.nodoActual]
 
             
 
@@ -98,11 +106,12 @@ class Grafo: #instancia de la clase grafo
         # recorre la arista mas liviana y reemplaza el nodo si la distancia es mas corta
         def recorre(self):
 
-            distanciaActual = self.DistanciasAux[self.nodoActual]
+            self.distanciaActual = self.DistanciasAux[self.nodoActual]
 
             self.nodoActual = self.nodoMenor()
 
             if (self.nodoActual == self.nodoFinal):
+                
 
                 return True
 
@@ -113,13 +122,16 @@ class Grafo: #instancia de la clase grafo
 
                 if arista.getNodoF() not in self.nodosVisitados:
 
-                    if (self.DistanciasAux[arista.getNodoF()] < distanciaActual + arista.getPeso()):
+                    print(arista.getNodoI())
 
-                        self.DistanciasAux[arista.getNodoF()] = distanciaActual + arista.getPeso()
+                    if (self.DistanciasAux[arista.getNodoF()] < self.distanciaActual + arista.getPeso()):
+
+                        self.DistanciasAux[arista.getNodoF()] = self.distanciaActual + arista.getPeso()
+                    
             
             self.nodosVisitados.append(self.nodoActual)
 
-            return self.recorre(self.nodoActual)
+            return self.recorre()
             
             
         

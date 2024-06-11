@@ -20,7 +20,7 @@ class Arista:
             elif(nodo==self.nodofin):
                 return self.nodoin
         except Exception as e:
-            return 'No esta conectado'
+            return 'No esta conectado, o no existe ', nodo
    
     def getPeso(self):
         return self.peso

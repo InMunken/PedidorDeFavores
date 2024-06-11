@@ -11,8 +11,8 @@ class Lector:
         # Diccionario de palabras a pesos de aristas
         tipos_palabras = {
         "AmigoPersonal": 3,
-        "Compañero": 2,
-        "Conocido": 1
+        "Conocido": 2,
+        "Companero": 1
         }
 
         #Lectura del archivo
