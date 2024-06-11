@@ -24,7 +24,7 @@ for arista in aristas:
     # print(arista[1])
     # print(arista[2])
     grafo.addArista(arista[0], arista[1], int(arista[2]))
-    
 
 
-Grafo.Grafo.Dijkstra(grafo,"Isabel","Karen")
+
+Grafo.Grafo.Dijkstra(grafo,"Ana","Marta")

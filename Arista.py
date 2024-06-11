@@ -30,5 +30,8 @@ class Arista:
 
     def getNodoF(self):
         return self.nodofin
+    
+    def toString(self):
+        return "Entre " ,self.nodoin , " y " , self.nodofin , " hay una distancia de amistad de: " , self.peso
 
     

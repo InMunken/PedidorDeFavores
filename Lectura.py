@@ -40,7 +40,7 @@ class Lector:
                     # Asignar el peso correspondiente al tipo de palabra
                         relacion[relacion.index(palabra)] = str(tipos_palabras[palabra])
                 self.listadeRelaciones.append(relacion)
-
+    
     
     def get_cantidadNodos(self):
         return self.cantidadNodos
