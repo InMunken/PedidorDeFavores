@@ -1,6 +1,5 @@
 import sys
 
-
 class Dijkstra:
 
         def __init__(self,grafo,nodoInicial,nodoFinal):
@@ -23,7 +22,7 @@ class Dijkstra:
         def getCamino(self):
 
             aristas = self.grafo.getAristasDeNodo(self.nodoActual)
-            print(self.nodoActual)
+            print(self.nodoActual) #TODO: remover esta linea
 
             for arista in aristas:
 

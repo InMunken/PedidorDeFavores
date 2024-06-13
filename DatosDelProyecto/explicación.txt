@@ -21,11 +21,11 @@ getAristasDeNodo
 	Para esto crea una lista llamada "aristasTotales"
 	Y por medio de un for each tomará cada arista en self.Arista(debería ser aristas) para preguntarle ¿Tenés al nodo parámetro? (Esto es un método de la case Arista) En caso afimativo añade la arista a la lista aristasTotales, cuando termina de recorrer todas las aristas devuelve la lista aristasTotales, que en el caso de el nodo contener aristas, estas estarán ahora listadas.
 	
-	
 
-Tiene definida dentro de sí:
 
-	La clase "Dijksta": 
+getAristaLiviana
+
+La clase "Dijksta": 
 		La clase Dijstra se intancia con un contructor con varios parámetros: Una referencia self de sí misma, un objeto grafo, un nodo inicial y un nodo final. 
 		Y por medio del constructor se crean las siguientes varialbes self: 
 		self.grafo: donde se guarda el grafo parámetro
@@ -42,8 +42,3 @@ Tiene definida dentro de sí:
 		
 		
 		Con un for each toma cada arista dentro de la nueva lista aristas, y pregunta: ¿?
-		
-recorre
-
-getAristaLiviana
-
