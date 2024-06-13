@@ -5,18 +5,18 @@ class Dijkstra:
         def __init__(self,grafo,nodoInicial,nodoFinal):
             
             #inicializacion de variables
-
             self.grafo = grafo
             self.nodoInicial = nodoInicial
             self.nodoFinal = nodoFinal
-            self.nodoActual = nodoInicial
+            self.nodoActual = self.nodoInicial
             self.nodosVisitados = []
-            self.nodosVisitados.append(self.nodoActual)
 
             #mapa de distancias
             self.DistanciasAux = {
                 self.nodoActual:0
             }
+
+            self.nodosVisitados.append(self.nodoActual)
 
         #devuelve el camino mas corto entre el nodo inicial y final
         def getCamino(self):
