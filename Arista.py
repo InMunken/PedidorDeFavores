@@ -5,6 +5,7 @@ class Arista:
         self.nodoin = nodoin
         self.nodofin = nodofin
         self.peso = peso
+        self.final = False
 
     # Devuelve True si el nodo esta en la arista
     def tieneNodo(self, nodo):
@@ -29,8 +30,3 @@ class Arista:
 
     def getNodoF(self):
         return self.nodofin
-    
-    def toString(self):
-        return "Entre " ,self.nodoin , " y " , self.nodofin , " hay una distancia de amistad de: " , self.peso
-
-    

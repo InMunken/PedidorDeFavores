@@ -3,12 +3,12 @@
 Este software está pensado para resolver el siguiente ejercico encontrado en el [pdf](http://campusvirtual.uno.edu.ar/moodle/pluginfile.php/159506/mod_resource/content/2/TP%202.docx.pdf) de la prácita de programación orientada a objetos II  de la Universidad Nacional del Oeste.
 
 ## Estructura del proyecto 
-La estructura del proyecto esta definida en `clases.drawio` 
+La estructura del proyecto esta definida en `DatosDelProyecto/Diagrama POO2.drawio` y explicada en `explicación.txt`.
 
 ## Uso del software 
 1. Se creará el archivo de entrada.
 2. Se ejecutará el archivo `main.py`.
-3. Se ingresarán _por consola?_ dos nombres de nodos.
+3. Se ingresarán por consola dos nombres de nodos.
 
 Entonces el programa revolverá cuál es el camino más óptimo para pedir un favor a través de tus conocidos y los conocidos de sus conocidos.
 
@@ -24,14 +24,14 @@ El archivo de entrada se compondrá de las siguientes partes
 
 Ejemplo: 
 ```
-4   
-Pitusas
+4
+Tobias
 Ñandú
-InMunken
-Pola
-Pitusas InMunken AmigoPersonal 
-Ñandú Pola Compañero
-InMunken Ñandú AmigoPersonal 
-InMunken Pola Compañero
-Pitusas Pola Conocido
+Federico
+Maxi
+Tobias Federico AmigoPersonal 
+Ñandú Maxi Compañero
+Federico Ñandú AmigoPersonal 
+Federico Maxi Compañero
+Tobias Maxi Conocido
 ```
