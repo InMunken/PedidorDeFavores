@@ -19,7 +19,7 @@ class Dijkstra:
                 self.nodoActual:0
             }
 
-        #devuelve el camino mas corto entre el nodo inicial y fina
+        #devuelve el camino mas corto entre el nodo inicial y final
         def getCamino(self):
 
             aristas = self.grafo.getAristasDeNodo(self.nodoActual)
@@ -28,9 +28,8 @@ class Dijkstra:
             for arista in aristas:
 
                 self.DistanciasAux[arista.devolverOtro(self.nodoActual)] = arista.getPeso()
-
+                
             
-
             if(self.recorre()):
                 
                 return self.DistanciasAux[self.nodoActual]
