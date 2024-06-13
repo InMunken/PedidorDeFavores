@@ -11,7 +11,6 @@ class Arista:
 
         return nodo==self.nodoin or nodo==self.nodofin
     
-    # Devuelve el nodo que conecta la arista llamada con el nodo llamado como parámetro, quejas a gabrieldiazjor@gmail.com, +54 9 11 2786-7506
     # TODO agregar cláusla par manejar posible error de no encontrar el nodo
     def devolverOtro(self,nodo):
         try:

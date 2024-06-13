@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<line x1="100" y1="100" x2="300" y2="100" style="stroke:rgb(0,0,0);stroke-width:2" />
+<text x="200.0" y="100.0" fill="red">5</text>
+<line x1="100" y1="100" x2="200" y2="300" style="stroke:rgb(0,0,0);stroke-width:2" />
+<text x="150.0" y="200.0" fill="red">10</text>
+<line x1="300" y1="100" x2="200" y2="300" style="stroke:rgb(0,0,0);stroke-width:2" />
+<text x="250.0" y="200.0" fill="red">3</text>
+<circle cx="100" cy="100" r="10" fill="blue" />
+<text x="112" y="100" fill="black">A</text>
+<circle cx="300" cy="100" r="10" fill="blue" />
+<text x="312" y="100" fill="black">B</text>
+<circle cx="200" cy="300" r="10" fill="blue" />
+<text x="212" y="300" fill="black">C</text>
+</svg>
