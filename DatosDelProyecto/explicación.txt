@@ -44,8 +44,39 @@ La clase "Dijksta":
 
 			El método getCamino recibe como parámetro una referencia a la clase Dijksta.
 
+			crea una variable aristas será una lista que guarda todas las aristas del nodo actual, para eso utiliza un método de la clase grafo.
+
+			Con un for each toma cada arista dentro de la nueva lista aristas, le pide el otro nodo que conecta al primer nodo (nodo actual) y le asigna como valor del diccionario la distancia.
+
+			Luego llama al método recorre de la propia clase, en le caso de que este devuelva true (lo devolverá cando llegue al nodo final, es decir, haya encontrado el camino) devolverá la DistanciaAux del nodo acutal, que para entonces el nodo acutal será el nodo final.
+
+		Método recorrer
+			
+			El método recorre recibe como parámetro una referencia de la propia clase Dijksta para usar sus variables self.
+
+			actualiza el valor de selctual por medio de una llamada a la función propia de la clase nodoMenor() (que devolverá el nodo de menor distancia desde nodo inicial regitrado en el mapa)
+
+			actualiza el valor de 
+
+
+			
+
 			
 
 
-	
-	Con un for each toma cada arista dentro de la nueva lista aristas, y pregunta: ¿?
+
+		Método nodoMenor
+			
+			Devuelve el nodo de menor distancia que no se haya visitado
+			
+			Ordena el mapa de menor a mayor,lo recorre en un for each y devuelve el primer nodo que no este dentr
+
+		Método getAristaLiviana
+
+			Devuelve el peso de la arista mas liviana que su otro nodo no haya sido visitado
+
+	Tortuga
+		La clase tortuga utiliza la libreria propia de python llamada "turtle" con la cual nos ayudamos para dibujar los grafos. En el caso de la clase "tortuga" se establecen las posiciones de los nodos de manera aleatoria, para luego utilizar un algoritmo de fuerzas de repulsión o atracción entre los nodos. Este nos permite generar nuevos grafos ingresándole la matriz de incidencia del grafo
+
+	Tortugadefinida
+		Esta tambien utilizamos la libreria "turtle" para dibujar un grafo, pero ya tenemos predefinido un grafo y las posiciones de sus nodos en el plano, por lo que no es posible asignar un nuevo grafo sin tener que editar a mano las posiciones de sus nodos.
