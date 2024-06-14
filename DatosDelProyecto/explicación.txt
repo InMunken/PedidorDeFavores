@@ -1,31 +1,31 @@
-La clase grafo se instancia con dos variables self: nodos y arista(debería ser aristas) ambas son listas
+La clase "Grafo":
 
-La clase tiene estos métodos: 
+	La clase Grafo se instancia con dos variables self: nodos y arista(debería ser aristas) ambas son listas y será la representación de nuestro grafo.
+	La clase tiene estos métodos: 
 
-addNodo:
-	Éste método recibe una refetencia self de la clase, y un nodo como parámetro
-	Lo que hace es guardar dentro de la lista "self.nodos" el nodo que llega como parámetro.
+	addNodo:
+		Éste método recibe una refetencia self de la clase, y un nodo como parámetro
+		Lo que hace es guardar dentro de la lista "self.nodos" el nodo que llega como parámetro.
 
-addArista:
-	Éste método recibe una referencia self de la clase, y una arista como parámetro, esta arista podrá ser un objeto arista o los datos que componen a una arista.
-	"*args" significa que addArista puede recibir cualquier cantidad de argumentos posicionales adicionales después del primer argumento
-	En el caso de que sea un objeto arista lo añade a la lista self.Arista, en el caso que sean sólo los datos de una arista primero crea un objeto arista con esos datos y luego añade ese objeto a la lista self.arista
+	addArista:
+		Éste método recibe una referencia self de la clase, y una arista como parámetro, esta arista podrá ser un objeto arista o los datos que componen a una arista.
+		"*args" significa que addArista puede recibir cualquier cantidad de argumentos posicionales adicionales después del primer argumento
+		En el caso de que sea un objeto arista lo añade a la lista self.Arista, en el caso que sean sólo los datos de una arista primero crea un objeto arista con esos datos y luego añade ese objeto a la lista self.arista
 
-getRelacionados
-	Ésta método recibe como parámetro una referencia a la clase y un nodo, devolverá todos los nodos relacionados con el nodo enviado como parámetro.
-	Para esto crea una lista vacía llamada "nodosTotales" y utilizando un for each toma cada arista en la lista self.Arista(debería ser aristas) 
-	Por cada arista de toma de self.Arista pregunta: ¿Esta arista contiene el nodo enviado como parámetro? (Esto es un método de la clase arista). En el caso afirmativo, se le pregunta a la arista cuál es el nodo que está conectando con el nodo parámetro (Esto es un método de la clase Arista), y dicho nodo se arega a la lista "nodosTotales"
+	getRelacionados
+		Ésta método recibe como parámetro una referencia a la clase y un nodo, devolverá todos los nodos relacionados con el nodo enviado como parámetro.
+		Para esto crea una lista vacía llamada "nodosTotales" y utilizando un for each toma cada arista en la lista self.Arista(debería ser aristas) 
+		Por cada arista de toma de self.Arista pregunta: ¿Esta arista contiene el nodo enviado como parámetro? (Esto es un método de la clase arista). En el caso afirmativo, se le pregunta a la arista cuál es el nodo que está conectando con el nodo parámetro (Esto es un método de la clase Arista), y dicho nodo se arega a la lista "nodosTotales"
 
-getAristasDeNodo
-	Ésta método recibe como parámetro una referencia a la clase y un nodo, devolverá las aristas que tenga un nodo en forma de lista.
-	Para esto crea una lista llamada "aristasTotales"
-	Y por medio de un for each tomará cada arista en self.Arista(debería ser aristas) para preguntarle ¿Tenés al nodo parámetro? (Esto es un método de la case Arista) En caso afimativo añade la arista a la lista aristasTotales, cuando termina de recorrer todas las aristas devuelve la lista aristasTotales, que en el caso de el nodo contener aristas, estas estarán ahora listadas.
+	getAristasDeNodo
+		Ésta método recibe como parámetro una referencia a la clase y un nodo, devolverá las aristas que tenga un nodo en forma de lista.
+		Para esto crea una lista llamada "aristasTotales"
+		Y por medio de un for each tomará cada arista en self.Arista(debería ser aristas) para preguntarle ¿Tenés al nodo parámetro? (Esto es un método de la case Arista) En caso afimativo añade la arista a la lista aristasTotales, cuando termina de recorrer todas las aristas devuelve la lista aristasTotales, que en el caso de el nodo contener aristas, estas estarán ahora listadas.
 	
 
 
-getAristaLiviana
-
 La clase "Dijksta": 
+
 	La clase Dijstra se intancia con un contructor con varios parámetros: Una referencia self de sí misma, un objeto grafo, un nodo inicial y un nodo final. 
 	Y por medio del constructor se crean las siguientes varialbes self: 
 	self.grafo: donde se guarda el grafo parámetro
@@ -96,6 +96,18 @@ La clase "Dijksta":
 			
 			Ordena el mapa de menor a mayor,lo recorre en un for each y devuelve el primer nodo que no este dentro
 
+La clase "Arista":
+	La clase Arista se encarga de representar una conexión o vínculo entre dos nodos en un grafo. Se inicializa con cuatro parámetros que son una referencia a si mismo, nodoin: el nodo de inicio de la arista, nodofin: el nodo final de la arista y peso: el peso asociado a la arista.
+
+		Método tieneNodo(nodo): Devuelve un booleano indicando si el nodo dado está conectado a esta arista
+
+		Método devolverOtro(nodo): Si el nodo dado es el nodo de inicio (nodoin) de la arista, devuelve el nodo final (nodofin). Si el nodo dado es el nodo final, devuelve el nodo de inicio
+
+		Método getPeso(): Devuelve el peso asociado a la arista
+
+		Método getNodoI(): Devuelve el nodo de inicio (nodoin) de la arista
+
+		Método getNodoF(): Devuelve el nodo final (nodofin) de la arista
 
 
 
