@@ -50,30 +50,70 @@ La clase "Dijksta":
 
 			Luego llama al método recorre de la propia clase, en le caso de que este devuelva true (lo devolverá cando llegue al nodo final, es decir, haya encontrado el camino) devolverá la DistanciaAux del nodo acutal, que para entonces el nodo acutal será el nodo final.
 
-		Método recorrer
+		Método recorre
 			
 			El método recorre recibe como parámetro una referencia de la propia clase Dijksta para usar sus variables self.
 
-			actualiza el valor de selctual por medio de una llamada a la función propia de la clase nodoMenor() (que devolverá el nodo de menor distancia desde nodo inicial regitrado en el mapa)
+			actualiza el valor de self.nodoActual por medio de una llamada a la función propia de la clase nodoMenor() (que devolverá el nodo de menor distancia desde el nodo inicial que no se haya visitado)
 
-			actualiza el valor de 
+			actualiza el valor de self.distanciaActual por medio de llamar al diccionario de Distancias y preguntar por el nodo acutal.
+
+			pregunta ¿El nodo acutal ya es el nodo final?
+				en el caso de que sea afirmativa la pregunta será porque la función ya terminó, entonces devolverá True.
+
+				caso contrario significa que el código no terminó, por lo que sólo se seguirá.
+
+			se guarda en la variable local "aristas" el calor retornado por el método del grafo instanciado dentro de la calse llamado "getAristasDeNodo" que tendrá self.nodoActual como parámetro	
+
+			con un for each recorrerán esas aristas devueltas por el método:
+
+				por cada una de ellas se preguntará: el nodo conectado por la arista con el nodo actual, ¿no está en self.nodosVisitados?
+
+				En el caso afimativo (no está): 
+
+					intentará preguntar:
+
+						el value de la key del nodo conectado con el actual porla arista de la que estamos hablando, ¿es mayor la distancia actual más el peso de la arista de la que hablamos?
+
+						en caso afirmativo: 
+
+							se actualizará el valor en el diccionario DistanciasAux de el nodo conectado por la arita de la que hablamos por el nodo acutal por la distancia actual más el peso de la arista
+
+					En el caso de que falle el inteto  
+
+						se actualizará el valor en el diccionario DistanciasAux de el nodo conectado por la arita de la que hablamos por el nodo acutal por la distancia actual más el peso de la arista
 
 
-			
+			Se guardará en la lista de nodos visitados el nodo actual.	
 
-			
+		Método getAristaLiviana
 
-
+			Está en desuso pero serviería para devolver el peso de la arista mas liviana que su otro nodo no haya sido visitado.	
 
 		Método nodoMenor
 			
 			Devuelve el nodo de menor distancia que no se haya visitado
 			
-			Ordena el mapa de menor a mayor,lo recorre en un for each y devuelve el primer nodo que no este dentr
+			Ordena el mapa de menor a mayor,lo recorre en un for each y devuelve el primer nodo que no este dentro
 
-		Método getAristaLiviana
 
-			Devuelve el peso de la arista mas liviana que su otro nodo no haya sido visitado
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	Tortuga
 		La clase tortuga utiliza la libreria propia de python llamada "turtle" con la cual nos ayudamos para dibujar los grafos. En el caso de la clase "tortuga" se establecen las posiciones de los nodos de manera aleatoria, para luego utilizar un algoritmo de fuerzas de repulsión o atracción entre los nodos. Este nos permite generar nuevos grafos ingresándole la matriz de incidencia del grafo
