@@ -26,19 +26,26 @@ getAristasDeNodo
 getAristaLiviana
 
 La clase "Dijksta": 
-		La clase Dijstra se intancia con un contructor con varios parámetros: Una referencia self de sí misma, un objeto grafo, un nodo inicial y un nodo final. 
-		Y por medio del constructor se crean las siguientes varialbes self: 
-		self.grafo: donde se guarda el grafo parámetro
-		self.nodoInicial: se almacena el nodo inicial
-		self.nodoFinal: se almacena el nodo final
-		self.nodoActual: se inicia como el nodo inicial también
-		self.nodosVisitados: una lista vacía donde se guardarán los nodos visitados.
-		
-		Lo primero que hace es guardar en la lista de nodos visitados el nodo considerado actual, que al principio será el nodo inicial.
-		Crea una variable aristas?? donde guarda las aristas del nodo actual por medio de llamar al objeto grafo.
+	La clase Dijstra se intancia con un contructor con varios parámetros: Una referencia self de sí misma, un objeto grafo, un nodo inicial y un nodo final. 
+	Y por medio del constructor se crean las siguientes varialbes self: 
+	self.grafo: donde se guarda el grafo parámetro
+	self.nodoInicial: se almacena el nodo inicial
+	self.nodoFinal: se almacena el nodo final
+	self.nodoActual: se inicia como el nodo inicial también
+	self.nodosVisitados: una lista vacía donde se guardarán los nodos visitados.
+	
+	Lo primero que hace es guardar en la lista de nodos visitados el nodo considerado actual, que al principio será el nodo inicial.
 
-		Genera un diccionario llamado self.DistanciasAux, que guardará en el key el nodo actual y en el value el peso de la arista.
+	Genera un diccionario llamado self.DistanciasAux, que guardará en el key el nodo actual y en el value el peso de la arista.
 
-		
-		
-		Con un for each toma cada arista dentro de la nueva lista aristas, y pregunta: ¿?
+	En ese mismo diccionario guarda la el nodo actual(que será el inicial) con peso 0
+
+		Método getCamino
+
+			El método getCamino recibe como parámetro una referencia a la clase Dijksta.
+
+			
+
+
+	
+	Con un for each toma cada arista dentro de la nueva lista aristas, y pregunta: ¿?

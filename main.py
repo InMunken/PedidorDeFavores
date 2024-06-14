@@ -1,4 +1,3 @@
-import Arista
 import Grafo
 import Lectura
 import Dijkstra
@@ -16,8 +15,8 @@ def agregar_aristas(aristas, grafo):
 
 lector = Lectura.Lector("Entrada/entrada2.in") 
 
-nodos = lector.get_nodes()
-aristas = lector.get_edges()
+nodos = lector.get_nodos()
+aristas = lector.get_aristas()
 
 
 
@@ -28,11 +27,13 @@ nodoFinal = input("Ingrese el nodo final: ")
 
 ### Se crea el grafo
 grafo = Grafo.Grafo()
-dijkstra = Dijkstra.Dijkstra(grafo, nodoInicial, nodoFinal)
 
 ### Se añaden los nodos y las aristas
 agregar_nodos(nodos, grafo)
 agregar_aristas(aristas, grafo)
+
+
+dijkstra = Dijkstra.Dijkstra(grafo, nodoInicial, nodoFinal)
 
 
 print("La distancia de amistad entre " , nodoInicial , " y " , nodoFinal , " es: " , dijkstra.getCamino())

@@ -3,7 +3,6 @@ import Arista
 
 class Grafo: # Defincion de la clase grafo
 
-
     # Constructor
     def __init__(self):
 
@@ -17,7 +16,7 @@ class Grafo: # Defincion de la clase grafo
 
     # Metodos añade arista
     def addArista(self, *args):
-        
+
         # Si solo hay un argumento añade una arista
         if (len(args)==1):
             self.aristas.append(args[0])

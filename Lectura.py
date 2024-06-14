@@ -48,10 +48,10 @@ class Lector:
     def get_cantidadAristas(self):
         return self.cantidadRelaciones
     
-    def get_nodes(self):
+    def get_nodos(self):
         return self.listadenodos
     
-    def get_edges(self):
+    def get_aristas(self):
         return self.listadeRelaciones
 
 
