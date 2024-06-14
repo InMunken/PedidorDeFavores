@@ -112,18 +112,40 @@ La clase "Arista":
 
 
 
+Clase "Lector"
+	La clase Lector se encarga de leer y procesar un archivo de texto que contiene la información de un grafo, específicamente los nodos y las relaciones entre ellos. Esta clase convierte las relaciones en pesos basados en ciertos tipos de palabras.
 
+	Recibe como parámetros una referencia a sí mismo y una ruta en formato string.
 
+    Descripción:
+        Obtiene la ruta absoluta del archivo.
+        Define un diccionario tipos_palabras que mapea ciertos tipos de relaciones a pesos.
+        Lee el archivo y procesa su contenido:
+            La primera línea del archivo contiene el número de nodos y el número de relaciones.
+            Las siguientes líneas (hasta la cantidad de nodos) contienen los nombres de los nodos.
+            Las líneas restantes contienen las relaciones entre nodos y asigna los pesos correspondientes a las relaciones.
 
+    Variables de instancia:
+        self.lines (list): Lista de líneas leídas del archivo.
+        self.cantidadNodos (int): Cantidad de nodos en el grafo.
+        self.cantidadRelaciones (int): Cantidad de relaciones en el grafo.
+        self.listadenodos (list): Lista de nodos en el grafo.
+        self.listadeRelaciones (list): Lista de relaciones en el grafo, con los pesos correspondientes.
 
+	Método get_cantidadNodos(self) 
+		Devuelve la cantidad de nodos en el grafo.
+	    
 
+	Método get_cantidadAristas(self)
+		Devuelve la cantidad de relaciones en el grafo.
+	    
 
+	Método get_nodos(self)
+	    Devuelve la lista de nodos en el grafo.
+	    
 
-
-
-
-
-
+	Método get_aristas(self)
+		Devuelve la lista de relaciones en el grafo, con los pesos correspondientes, donde cada relación es una lista con los nodos y el peso.
 
 
 
